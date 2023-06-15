@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-areas:
+    "h1 h1 h1"
+    "header header header"
+    "banner banner sb1"
+    "banner banner sb2"
+    "sm main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer";
+}
+
+h1 {
+  grid-area: h1;
+  background: blue;
+  color: white;
+}
+header {
+  background: green;
+  grid-area: header;
+}
+.banner {
+  background: linear-gradient(to right, blue, red);
+  min-height: 10vh;
+  color: white;
+  grid-area: banner;
+}
+
+.side-box1 {
+  background: purple;
+  grid-area: sb1;
+}
+.side-box2 {
+  background: orange;
+  grid-area: sb2;
+}
+
+.side-menu {
+  background: pink;
+  grid-area: sm;
+}
+.tags {
+  background: pink;
+  grid-area: tags;
+}
+.recent {
+  background: gray;
+  grid-area: recent;
+}
+
+.main {
+  background: radial-gradient(red, yellow);
+  grid-area: main;
+  min-height: 30vh;
+}
+.footer {
+  background: black;
+  grid-area: footer;
+  color: white;
+}
+
+.wrapper > * {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+@media (0 <= width < 992px) {
+  .wrapper {
+    display: grid;
+    gap: 0.7rem;
+    grid-template-areas:
+      "h1 h1  "
+      "header header "
+      "banner banner "
+      "sb1 sb2"
+      "sm sm"
+      " main main"
+      "main main"
+      "recent tags"
+      "footer footer";
+  }
+}
+
+@media (0 <= width < 768px) {
+  .wrapper {
+    display: grid;
+    gap: 0.7rem;
+    grid-template-areas:
+      "h1 "
+      "header "
+      "banner "
+      "banner "
+      "sb1"
+      "sb2"
+      "sm "
+      "main"
+      "main"
+      "tags "
+      "recent "
+      "footer ";
+  }
+}
